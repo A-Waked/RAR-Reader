@@ -21,12 +21,14 @@ from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PySide2.QtGui import (QPixmap, QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
+from PIL.ImageQt import ImageQt
 
 # GUI FILE
 from app_modules import *
 
 class MainWindow(QMainWindow):
     def __init__(self):
+        image = Reader.readfile('/home/abdul/Comics/images.rar')
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -118,7 +120,8 @@ class MainWindow(QMainWindow):
         #                                                                      #
         ## ==> USER CODES BELLOW                                              ##
         ########################################################################
-        pixmap = QPixmap('image.png')
+        qim = ImageQt(image)
+        pixmap = QPixmap('modified.png')
         self.ui.scroll_label.setPixmap(pixmap)
 
 
@@ -216,6 +219,7 @@ class MainWindow(QMainWindow):
     ############################## ---/--/--- ##############################
 
 if __name__ == "__main__":
+    #main()
     app = QApplication(sys.argv)
     QtGui.QFontDatabase.addApplicationFont('fonts/segoeui.ttf')
     QtGui.QFontDatabase.addApplicationFont('fonts/segoeuib.ttf')

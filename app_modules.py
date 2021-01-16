@@ -1,6 +1,7 @@
 ################################################################################
 ##
 ## BY: WANDERSON M.PIMENTA
+## MODIFIED BY: ABDUL WAKED
 ## PROJECT MADE WITH: Qt Designer and PySide2
 ## V: 1.0.0
 ##
@@ -25,3 +26,6 @@ from ui_functions import *
 
 ## ==> APP FUNCTIONS
 from app_functions import *
+
+# FILE READER
+from reader import Reader
