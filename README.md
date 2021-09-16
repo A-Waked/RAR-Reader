@@ -1,2 +1,2 @@
 # RAR/CBR Reader
-reads collection of images stored in rar type files
+A basic desktop app that reads a image archives (rar/cbr) in vertical mode.
